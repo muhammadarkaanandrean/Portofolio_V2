@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    section[id] {
+        scroll-margin-top: 4.5rem;
+    }
+
+    button {
+        cursor: pointer;
+    }
+}
+
+/* Muncul saat di-scroll (kelas is-visible ditambahkan oleh main.js) */
+@layer components {
+    .reveal {
+        opacity: 0;
+    }
+
+    .reveal.is-visible {
+        animation: reveal-up 0.8s ease-out both;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+    }
+}

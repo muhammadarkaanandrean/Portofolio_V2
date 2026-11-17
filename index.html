@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Portofolio Muhammad Arkaan Andrean, mahasiswa Informatika Universitas Teknokrat Indonesia.">
+        <title>Portofolio | Muhammad Arkaan Andrean</title>
+
+        <!-- Terapkan tema tersimpan sebelum halaman tampil. Default: gelap -->
+        <script>
+            try {
+                if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark');
+            } catch (e) {}
+        </script>
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+
+    <body class="bg-slate-50 font-sans text-slate-700 antialiased transition-colors dark:bg-slate-950 dark:text-slate-300">
+
+        <!-- ================= NAVBAR ================= -->
+        <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur dark:border-slate-800 dark:bg-slate-950/80">
+            <nav class="mx-auto max-w-6xl px-4 sm:px-6 flex h-16 items-center justify-between" aria-label="Navigasi utama">
+                <a href="#home" class="text-xl font-bold text-slate-900 dark:text-white">Arkaan<span class="text-primary dark:text-accent">.</span></a>
+
+                <ul class="hidden items-center gap-7 text-sm font-medium md:flex">
+                    <li><a href="#home" class="transition hover:text-primary dark:hover:text-accent">Home</a></li>
+                    <li><a href="#about" class="transition hover:text-primary dark:hover:text-accent">Tentang</a></li>
+                    <li><a href="#skills" class="transition hover:text-primary dark:hover:text-accent">Skill</a></li>
+                    <li><a href="#projects" class="transition hover:text-primary dark:hover:text-accent">Proyek</a></li>
+                    <li><a href="#experience" class="transition hover:text-primary dark:hover:text-accent">Pengalaman</a></li>
+                    <li><a href="#certificates" class="transition hover:text-primary dark:hover:text-accent">Sertifikat</a></li>
+                    <li><a href="#contact" class="transition hover:text-primary dark:hover:text-accent">Kontak</a></li>
+                </ul>
+
+                <div class="flex items-center gap-2">
+                    <button id="themeToggle" type="button" aria-label="Ganti tema"
+                        class="grid size-10 place-items-center rounded-full text-slate-600 transition hover:bg-slate-200 active:scale-90 dark:text-slate-300 dark:hover:bg-slate-800">
+                        <span class="hidden dark:inline"><i class="fa-solid fa-sun"></i></span>
+                        <span class="dark:hidden"><i class="fa-solid fa-moon"></i></span>
+                    </button>
+                    <button id="burger" type="button" aria-label="Buka menu" aria-expanded="false"
+                        class="grid size-10 place-items-center rounded-full text-slate-600 transition hover:bg-slate-200 md:hidden dark:text-slate-300 dark:hover:bg-slate-800">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Menu mobile -->
+            <div id="mobileMenu" class="hidden border-t border-slate-200 bg-white md:hidden dark:border-slate-800 dark:bg-slate-950">
+                <ul class="mx-auto max-w-6xl px-4 sm:px-6 flex flex-col py-2 text-sm font-medium">
+                    <li><a href="#home" class="block rounded-lg px-3 py-2.5 hover:bg-slate-100 dark:hover:bg-slate-900">Home</a></li>
+                    <li><a href="#about" class="block rounded-lg px-3 py-2.5 hover:bg-slate-100 dark:hover:bg-slate-900">Tentang</a></li>
+                    <li><a href="#skills" class="block rounded-lg px-3 py-2.5 hover:bg-slate-100 dark:hover:bg-slate-900">Skill</a></li>
+                    <li><a href="#projects" class="block rounded-lg px-3 py-2.5 hover:bg-slate-100 dark:hover:bg-slate-900">Proyek</a></li>
+                    <li><a href="#experience" class="block rounded-lg px-3 py-2.5 hover:bg-slate-100 dark:hover:bg-slate-900">Pengalaman</a></li>
+                    <li><a href="#certificates" class="block rounded-lg px-3 py-2.5 hover:bg-slate-100 dark:hover:bg-slate-900">Sertifikat</a></li>
+                    <li><a href="#contact" class="block rounded-lg px-3 py-2.5 hover:bg-slate-100 dark:hover:bg-slate-900">Kontak</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <main>
+
+            <!-- ================= HERO ================= -->
+            <section id="home" class="relative overflow-hidden pb-16 pt-28 md:pb-24 md:pt-40">
+                <div class="pointer-events-none absolute -top-24 right-0 -z-10 size-96 animate-pulse rounded-full bg-primary/20 blur-3xl"></div>
+
+                <div class="mx-auto max-w-6xl px-4 sm:px-6 flex flex-col items-center justify-between gap-12 md:flex-row">
+                    <div class="animate-fade-up text-center md:text-left">
+                        <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-primary dark:text-accent">Halo, saya</p>
+                        <h1 class="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl">Muhammad Arkaan Andrean</h1>
+                        <h2 class="mt-3 text-lg font-medium text-slate-600 dark:text-slate-400 sm:text-xl">Informatics Student | Aspiring UI/UX Designer &amp; Developer</h2>
+                        <p class="mx-auto mt-5 max-w-lg leading-relaxed md:mx-0">
+                            Mahasiswa Informatika Universitas Teknokrat Indonesia yang tertarik pada UI/UX, desain digital,
+                            dan pengembangan aplikasi. Saya senang belajar hal baru dan bercita-cita merancang produk digital
+                            yang rapi dan mudah digunakan.
+                        </p>
+
+                        <div class="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
+                            <a href="cv/CV-Arkaan.pdf" download
+                                class="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition duration-300 hover:-translate-y-0.5 hover:bg-secondary active:scale-95">
+                                <i class="fa-solid fa-download"></i> Download CV
+                            </a>
+                            <a href="#projects"
+                                class="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition duration-300 hover:-translate-y-0.5 hover:border-primary hover:text-primary active:scale-95 dark:border-slate-700 dark:text-slate-200 dark:hover:border-accent dark:hover:text-accent">
+                                <i class="fa-solid fa-folder-open"></i> Lihat Proyek
+                            </a>
+                        </div>
+
+                        <div class="mt-8 flex justify-center gap-3 md:justify-start">
+                            <a href="https://github.com/muhammadarkaanandrean" aria-label="GitHub" class="grid size-11 place-items-center rounded-full border border-slate-300 text-slate-600 transition hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white dark:border-slate-700 dark:text-slate-300 dark:hover:border-accent dark:hover:bg-accent dark:hover:text-slate-950"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" aria-label="LinkedIn" class="grid size-11 place-items-center rounded-full border border-slate-300 text-slate-600 transition hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white dark:border-slate-700 dark:text-slate-300 dark:hover:border-accent dark:hover:bg-accent dark:hover:text-slate-950"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#" aria-label="Instagram" class="grid size-11 place-items-center rounded-full border border-slate-300 text-slate-600 transition hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white dark:border-slate-700 dark:text-slate-300 dark:hover:border-accent dark:hover:bg-accent dark:hover:text-slate-950"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="mailto:muhammad_arkaan_andrean@teknokrat.ac.id" aria-label="Email" class="grid size-11 place-items-center rounded-full border border-slate-300 text-slate-600 transition hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white dark:border-slate-700 dark:text-slate-300 dark:hover:border-accent dark:hover:bg-accent dark:hover:text-slate-950"><i class="fa-solid fa-envelope"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="order-first flex animate-fade-up justify-center [animation-delay:250ms] md:order-last">
+                        <img src="images/profile.jpg" alt="Foto Muhammad Arkaan Andrean" width="320" height="320"
+                            class="size-56 animate-float rounded-full object-cover shadow-2xl ring-4 ring-primary/40 sm:size-64 md:size-80 dark:ring-accent/40">
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= TENTANG ================= -->
+            <section id="about" class="bg-white py-20 dark:bg-slate-900/50">
+                <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                    <h2 class="reveal text-3xl font-bold tracking-tight text-slate-900 dark:text-white md:text-4xl text-center">Tentang <span class="text-primary dark:text-accent">Saya</span></h2>
+                    <p class="reveal mx-auto mt-6 max-w-3xl text-center leading-relaxed">
+                        Saya Muhammad Arkaan Andrean, mahasiswa Program Studi Informatika di Universitas Teknokrat Indonesia.
+                        Saya tertarik pada dunia desain, khususnya UI/UX, desain digital, teknologi, dan pengembangan aplikasi.
+                        Di waktu luang, saya senang bermain gitar, membaca komik, dan bermain game.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ================= SKILL ================= -->
+            <section id="skills" class="py-20">
+                <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                    <h2 class="reveal text-3xl font-bold tracking-tight text-slate-900 dark:text-white md:text-4xl text-center">Skill <span class="text-primary dark:text-accent">Saya</span></h2>
+
+                    <div class="mt-12 grid gap-6 md:grid-cols-2">
+                        <article class="reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900">
+                            <h3 class="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Frontend</h3>
+                            <ul class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                                <li class="flex items-center gap-2.5 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 dark:bg-slate-800 dark:text-slate-200">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/html5/html5-original.svg" alt="Logo HTML5" class="size-5">
+                                    HTML5
+                                </li>
+                                <li class="flex items-center gap-2.5 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 dark:bg-slate-800 dark:text-slate-200">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/css3/css3-original.svg" alt="Logo CSS3" class="size-5">
+                                    CSS3
+                                </li>
+                                <li class="flex items-center gap-2.5 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 dark:bg-slate-800 dark:text-slate-200">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/tailwindcss/tailwindcss-original.svg" alt="Logo Tailwind CSS" class="size-5">
+                                    Tailwind CSS
+                                </li>
+                                <li class="flex items-center gap-2.5 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 dark:bg-slate-800 dark:text-slate-200">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/javascript/javascript-original.svg" alt="Logo JavaScript" class="size-5">
+                                    JavaScript
+                                </li>
+                            </ul>
+                        </article>
+                        <article class="reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900">
+                            <h3 class="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Backend</h3>
+                            <ul class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                                <li class="flex items-center gap-2.5 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 dark:bg-slate-800 dark:text-slate-200">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/php/php-original.svg" alt="Logo PHP" class="size-5">
+                                    PHP
+                                </li>
+                                <li class="flex items-center gap-2.5 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 dark:bg-slate-800 dark:text-slate-200">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/laravel/laravel-original.svg" alt="Logo Laravel" class="size-5">
+                                    Laravel
+                                </li>
+                            </ul>
+                        </article>
+                        <article class="reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900">
+                            <h3 class="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Database</h3>
+                            <ul class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                                <li class="flex items-center gap-2.5 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 dark:bg-slate-800 dark:text-slate-200">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mysql/mysql-original.svg" alt="Logo MySQL" class="size-5">
+                                    MySQL
+                                </li>
+                            </ul>
+                        </article>
+                        <article class="reveal rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900">
+                            <h3 class="mb-4 text-lg font-semibold text-slate-900 dark:text-white">Tools</h3>
+                            <ul class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                                <li class="flex items-center gap-2.5 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 dark:bg-slate-800 dark:text-slate-200">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/git/git-original.svg" alt="Logo Git" class="size-5">
+                                    Git
+                                </li>
+                                <li class="flex items-center gap-2.5 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 dark:bg-slate-800 dark:text-slate-200">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/github/github-original.svg" alt="Logo GitHub" class="size-5 dark:invert">
+                                    GitHub
+                                </li>
+                                <li class="flex items-center gap-2.5 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 dark:bg-slate-800 dark:text-slate-200">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/vscode/vscode-original.svg" alt="Logo VS Code" class="size-5">
+                                    VS Code
+                                </li>
+                                <li class="flex items-center gap-2.5 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 dark:bg-slate-800 dark:text-slate-200">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/figma/figma-original.svg" alt="Logo Figma" class="size-5">
+                                    Figma
+                                </li>
+                                <li class="flex items-center gap-2.5 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 dark:bg-slate-800 dark:text-slate-200">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/postman/postman-original.svg" alt="Logo Postman" class="size-5">
+                                    Postman
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PROYEK ================= -->
+            <section id="projects" class="bg-white py-20 dark:bg-slate-900/50">
+                <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                    <h2 class="reveal text-3xl font-bold tracking-tight text-slate-900 dark:text-white md:text-4xl text-center">Proyek <span class="text-primary dark:text-accent">Saya</span></h2>
+
+                    <div class="mt-8 flex flex-wrap justify-center gap-2">
+                        <button type="button" data-filter="all" aria-pressed="true"
+                            class="rounded-full bg-slate-200 px-5 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-300 aria-pressed:bg-primary aria-pressed:text-white dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 dark:aria-pressed:bg-accent dark:aria-pressed:text-slate-950">
+                            Semua
+                        </button>
+                        <button type="button" data-filter="web" aria-pressed="false"
+                            class="rounded-full bg-slate-200 px-5 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-300 aria-pressed:bg-primary aria-pressed:text-white dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 dark:aria-pressed:bg-accent dark:aria-pressed:text-slate-950">
+                            Web
+                        </button>
+                        <button type="button" data-filter="mobile" aria-pressed="false"
+                            class="rounded-full bg-slate-200 px-5 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-300 aria-pressed:bg-primary aria-pressed:text-white dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 dark:aria-pressed:bg-accent dark:aria-pressed:text-slate-950">
+                            Mobile
+                        </button>
+                        <button type="button" data-filter="design" aria-pressed="false"
+                            class="rounded-full bg-slate-200 px-5 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-300 aria-pressed:bg-primary aria-pressed:text-white dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 dark:aria-pressed:bg-accent dark:aria-pressed:text-slate-950">
+                            Design
+                        </button>
+                    </div>
+
+                    <!-- GANTI gambar placeholder dengan screenshot proyek (rasio 16:9) -->
+                    <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                        <article data-category="mobile" class="reveal overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+                            <img src="https://placehold.co/640x360/2563eb/ffffff?text=Nusantara%20Journey" alt="Tampilan proyek Nusantara Journey" width="640" height="360" class="aspect-video w-full object-cover">
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Nusantara Journey</h3>
+                                <p class="mt-2 line-clamp-3 text-sm leading-relaxed">Pengguna sulit menemukan info wisata Bandar Lampung. Solusinya: aplikasi wisata yang memudahkan menemukan dan mengenal destinasi lokal.</p>
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    <span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-secondary dark:bg-accent/10 dark:text-accent">#Flutter</span>
+                                    <span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-secondary dark:bg-accent/10 dark:text-accent">#Dart</span>
+                                    <span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-secondary dark:bg-accent/10 dark:text-accent">#UIUX</span>
+                                </div>
+                                <div class="mt-5 flex gap-4 border-t border-slate-200 pt-4 text-sm font-medium dark:border-slate-800">
+                                    <a href="#" class="inline-flex items-center gap-1.5 text-primary dark:text-accent transition hover:opacity-80"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                                    <a href="https://github.com/muhammadarkaanandrean" class="inline-flex items-center gap-1.5 transition hover:text-slate-900 dark:hover:text-white"><i class="fa-brands fa-github"></i> GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article data-category="design" class="reveal overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+                            <img src="https://placehold.co/640x360/0ea5e9/ffffff?text=Desain%20Layanan%20Kesehatan" alt="Tampilan proyek Desain Layanan Kesehatan" width="640" height="360" class="aspect-video w-full object-cover">
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Desain Layanan Kesehatan</h3>
+                                <p class="mt-2 line-clamp-3 text-sm leading-relaxed">Antarmuka layanan kesehatan yang rumit. Solusinya: desain modern dengan fokus kemudahan penggunaan dan pengalaman pengguna.</p>
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    <span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-secondary dark:bg-accent/10 dark:text-accent">#Figma</span>
+                                    <span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-secondary dark:bg-accent/10 dark:text-accent">#Prototype</span>
+                                    <span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-secondary dark:bg-accent/10 dark:text-accent">#UIUX</span>
+                                </div>
+                                <div class="mt-5 flex gap-4 border-t border-slate-200 pt-4 text-sm font-medium dark:border-slate-800">
+                                    <a href="#" class="inline-flex items-center gap-1.5 text-primary dark:text-accent transition hover:opacity-80"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                                    <a href="https://github.com/muhammadarkaanandrean" class="inline-flex items-center gap-1.5 transition hover:text-slate-900 dark:hover:text-white"><i class="fa-brands fa-github"></i> GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article data-category="design" class="reveal overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+                            <img src="https://placehold.co/640x360/059669/ffffff?text=Terra%20Guard" alt="Tampilan proyek Terra Guard" width="640" height="360" class="aspect-video w-full object-cover">
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Terra Guard</h3>
+                                <p class="mt-2 line-clamp-3 text-sm leading-relaxed">Edukasi lingkungan terasa membosankan. Solusinya: konsep game sederhana yang mengenalkan nilai-nilai SDGs.</p>
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    <span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-secondary dark:bg-accent/10 dark:text-accent">#Game</span>
+                                    <span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-secondary dark:bg-accent/10 dark:text-accent">#SDGs</span>
+                                    <span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-secondary dark:bg-accent/10 dark:text-accent">#Design</span>
+                                </div>
+                                <div class="mt-5 flex gap-4 border-t border-slate-200 pt-4 text-sm font-medium dark:border-slate-800">
+                                    <a href="#" class="inline-flex items-center gap-1.5 text-primary dark:text-accent transition hover:opacity-80"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                                    <a href="https://github.com/muhammadarkaanandrean" class="inline-flex items-center gap-1.5 transition hover:text-slate-900 dark:hover:text-white"><i class="fa-brands fa-github"></i> GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+                        <article data-category="web" class="reveal overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+                            <img src="https://placehold.co/640x360/7c3aed/ffffff?text=Website%20Portofolio" alt="Tampilan proyek Website Portofolio" width="640" height="360" class="aspect-video w-full object-cover">
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Website Portofolio</h3>
+                                <p class="mt-2 line-clamp-3 text-sm leading-relaxed">Butuh etalase karya yang responsif. Solusinya: landing page dengan HTML, Tailwind CSS, dan Vite, lengkap dengan dark mode.</p>
+                                <div class="mt-4 flex flex-wrap gap-2">
+                                    <span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-secondary dark:bg-accent/10 dark:text-accent">#HTML</span>
+                                    <span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-secondary dark:bg-accent/10 dark:text-accent">#Tailwind</span>
+                                    <span class="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-secondary dark:bg-accent/10 dark:text-accent">#Vite</span>
+                                </div>
+                                <div class="mt-5 flex gap-4 border-t border-slate-200 pt-4 text-sm font-medium dark:border-slate-800">
+                                    <a href="#" class="inline-flex items-center gap-1.5 text-primary dark:text-accent transition hover:opacity-80"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                                    <a href="https://github.com/muhammadarkaanandrean" class="inline-flex items-center gap-1.5 transition hover:text-slate-900 dark:hover:text-white"><i class="fa-brands fa-github"></i> GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PENGALAMAN & PENDIDIKAN ================= -->
+            <section id="experience" class="py-20">
+                <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                    <h2 class="reveal text-3xl font-bold tracking-tight text-slate-900 dark:text-white md:text-4xl text-center">Pengalaman &amp; <span class="text-primary dark:text-accent">Pendidikan</span></h2>
+
+                    <!-- GANTI data SMA/SMK dan organisasi dengan data aslimu -->
+                    <div class="mt-12 grid gap-12 md:grid-cols-2">
+                        <div>
+                            <h3 class="mb-8 text-xl font-semibold text-slate-900 dark:text-white">Pendidikan</h3>
+                            <ol class="ml-4 border-l-2 border-primary/40 dark:border-accent/40">
+                                <li class="reveal relative pb-10 pl-8 last:pb-0">
+                                    <span class="absolute -left-[17px] top-0 grid size-8 place-items-center rounded-full bg-primary text-white ring-4 ring-slate-50 dark:bg-accent dark:text-slate-950 dark:ring-slate-950"><i class="fa-solid fa-graduation-cap text-xs"></i></span>
+                                    <p class="text-xs font-semibold text-primary dark:text-accent">2024 – Sekarang</p>
+                                    <h4 class="mt-1 font-semibold text-slate-900 dark:text-white">S1 Informatika</h4>
+                                    <p class="text-sm text-slate-500">Universitas Teknokrat Indonesia</p>
+                                    <ul class="mt-2 list-disc space-y-1 pl-5 text-sm">
+                                        <li>Fokus pada UI/UX, desain digital, dan pengembangan aplikasi.</li>
+                                        <li>Aktif mengerjakan proyek praktikum dan tugas kuliah.</li>
+                                    </ul>
+                                </li>
+                                <li class="reveal relative pb-10 pl-8 last:pb-0">
+                                    <span class="absolute -left-[17px] top-0 grid size-8 place-items-center rounded-full bg-primary text-white ring-4 ring-slate-50 dark:bg-accent dark:text-slate-950 dark:ring-slate-950"><i class="fa-solid fa-graduation-cap text-xs"></i></span>
+                                    <p class="text-xs font-semibold text-primary dark:text-accent">2021 – 2024</p>
+                                    <h4 class="mt-1 font-semibold text-slate-900 dark:text-white">SMA / SMK</h4>
+                                    <p class="text-sm text-slate-500">Nama Sekolah Kamu</p>
+                                    <ul class="mt-2 list-disc space-y-1 pl-5 text-sm">
+                                        <li>Tulis jurusan dan pencapaian singkatmu di sini.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                        <div>
+                            <h3 class="mb-8 text-xl font-semibold text-slate-900 dark:text-white">Pengalaman</h3>
+                            <ol class="ml-4 border-l-2 border-primary/40 dark:border-accent/40">
+                                <li class="reveal relative pb-10 pl-8 last:pb-0">
+                                    <span class="absolute -left-[17px] top-0 grid size-8 place-items-center rounded-full bg-primary text-white ring-4 ring-slate-50 dark:bg-accent dark:text-slate-950 dark:ring-slate-950"><i class="fa-solid fa-briefcase text-xs"></i></span>
+                                    <p class="text-xs font-semibold text-primary dark:text-accent">2025 – Sekarang</p>
+                                    <h4 class="mt-1 font-semibold text-slate-900 dark:text-white">Anggota Organisasi</h4>
+                                    <p class="text-sm text-slate-500">Nama Organisasi Kampus</p>
+                                    <ul class="mt-2 list-disc space-y-1 pl-5 text-sm">
+                                        <li>Tulis tugas atau peran utamamu.</li>
+                                        <li>Tulis hasil atau kontribusi yang bisa diukur.</li>
+                                    </ul>
+                                </li>
+                                <li class="reveal relative pb-10 pl-8 last:pb-0">
+                                    <span class="absolute -left-[17px] top-0 grid size-8 place-items-center rounded-full bg-primary text-white ring-4 ring-slate-50 dark:bg-accent dark:text-slate-950 dark:ring-slate-950"><i class="fa-solid fa-briefcase text-xs"></i></span>
+                                    <p class="text-xs font-semibold text-primary dark:text-accent">2025</p>
+                                    <h4 class="mt-1 font-semibold text-slate-900 dark:text-white">Panitia Kegiatan</h4>
+                                    <p class="text-sm text-slate-500">Nama Kegiatan / Kepanitiaan</p>
+                                    <ul class="mt-2 list-disc space-y-1 pl-5 text-sm">
+                                        <li>Tulis bagian yang kamu tangani.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= SERTIFIKAT ================= -->
+            <section id="certificates" class="bg-white py-20 dark:bg-slate-900/50">
+                <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                    <h2 class="reveal text-3xl font-bold tracking-tight text-slate-900 dark:text-white md:text-4xl text-center">Sertifikat &amp; <span class="text-primary dark:text-accent">Penghargaan</span></h2>
+
+                    <!-- GANTI dengan sertifikat aslimu -->
+                    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                        <article class="reveal flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900">
+                            <span class="grid size-12 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent"><i class="fa-solid fa-award text-xl"></i></span>
+                            <div>
+                                <h3 class="font-semibold text-slate-900 dark:text-white">Nama Sertifikat Pertama</h3>
+                                <p class="mt-1 text-sm text-slate-500">Dicoding Academy · 2025</p>
+                            </div>
+                        </article>
+                        <article class="reveal flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900">
+                            <span class="grid size-12 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent"><i class="fa-solid fa-award text-xl"></i></span>
+                            <div>
+                                <h3 class="font-semibold text-slate-900 dark:text-white">Nama Sertifikat Kedua</h3>
+                                <p class="mt-1 text-sm text-slate-500">Coursera · 2025</p>
+                            </div>
+                        </article>
+                        <article class="reveal flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900">
+                            <span class="grid size-12 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent"><i class="fa-solid fa-award text-xl"></i></span>
+                            <div>
+                                <h3 class="font-semibold text-slate-900 dark:text-white">Nama Penghargaan / Lomba</h3>
+                                <p class="mt-1 text-sm text-slate-500">Penyelenggara · 2026</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= KONTAK ================= -->
+            <section id="contact" class="py-20">
+                <div class="mx-auto max-w-5xl px-4 sm:px-6">
+                    <h2 class="reveal text-3xl font-bold tracking-tight text-slate-900 dark:text-white md:text-4xl text-center">Hubungi <span class="text-primary dark:text-accent">Saya</span></h2>
+                    <p class="mt-4 text-center">Tertarik bekerja sama atau ingin berdiskusi? Kirim pesan kapan saja.</p>
+
+                    <div class="mt-10 grid gap-8 md:grid-cols-[1fr_1.5fr]">
+                        <!-- Informasi kontak alternatif -->
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex items-center gap-3"><span class="grid size-10 place-items-center rounded-lg bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent"><i class="fa-solid fa-envelope"></i></span> muhammad_arkaan_andrean@teknokrat.ac.id</li>
+                            <li class="flex items-center gap-3"><span class="grid size-10 place-items-center rounded-lg bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent"><i class="fa-brands fa-github"></i></span> github.com/muhammadarkaanandrean</li>
+                            <li class="flex items-center gap-3"><span class="grid size-10 place-items-center rounded-lg bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent"><i class="fa-solid fa-location-dot"></i></span> Bandar Lampung, Indonesia</li>
+                        </ul>
+
+                        <form id="contactForm" class="reveal space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900/60 sm:p-8">
+                            <p id="formStatus" class="hidden rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-700 dark:text-emerald-300" role="status"></p>
+
+                            <div>
+                                <label for="name" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">Nama Lengkap</label>
+                                <input type="text" id="name" name="name" required placeholder="Nama lengkapmu" class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 transition focus:outline-none focus:ring-2 focus:ring-primary dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:focus:ring-accent">
+                            </div>
+                            <div>
+                                <label for="email" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">Alamat Email</label>
+                                <input type="email" id="email" name="email" required placeholder="nama@email.com" class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 transition focus:outline-none focus:ring-2 focus:ring-primary dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:focus:ring-accent">
+                            </div>
+                            <div>
+                                <label for="subject" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">Subjek</label>
+                                <input type="text" id="subject" name="subject" placeholder="Topik pesan" class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 transition focus:outline-none focus:ring-2 focus:ring-primary dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:focus:ring-accent">
+                            </div>
+                            <div>
+                                <label for="message" class="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">Isi Pesan</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Tulis pesanmu di sini" class="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 transition focus:outline-none focus:ring-2 focus:ring-primary dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:focus:ring-accent"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition duration-300 hover:-translate-y-0.5 hover:bg-secondary hover:shadow-xl active:translate-y-0 active:scale-95 sm:w-auto">
+                                <i class="fa-solid fa-paper-plane"></i> Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ================= FOOTER ================= -->
+        <footer class="border-t border-slate-200 bg-white py-10 dark:border-slate-800 dark:bg-slate-900/50">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 flex flex-col items-center justify-between gap-6 md:flex-row">
+                <p class="text-sm">&copy; 2026 Muhammad Arkaan Andrean. All Rights Reserved.</p>
+
+                <nav aria-label="Tautan cepat">
+                    <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium">
+                        <li><a href="#home" class="transition hover:text-primary dark:hover:text-accent">Home</a></li>
+                        <li><a href="#about" class="transition hover:text-primary dark:hover:text-accent">Tentang</a></li>
+                        <li><a href="#skills" class="transition hover:text-primary dark:hover:text-accent">Skill</a></li>
+                        <li><a href="#projects" class="transition hover:text-primary dark:hover:text-accent">Proyek</a></li>
+                        <li><a href="#experience" class="transition hover:text-primary dark:hover:text-accent">Pengalaman</a></li>
+                        <li><a href="#certificates" class="transition hover:text-primary dark:hover:text-accent">Sertifikat</a></li>
+                        <li><a href="#contact" class="transition hover:text-primary dark:hover:text-accent">Kontak</a></li>
+                    </ul>
+                </nav>
+
+                <div class="flex gap-4 text-lg">
+                    <a href="https://github.com/muhammadarkaanandrean" aria-label="GitHub" class="transition hover:text-primary dark:hover:text-accent"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn" class="transition hover:text-primary dark:hover:text-accent"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" aria-label="Instagram" class="transition hover:text-primary dark:hover:text-accent"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:muhammad_arkaan_andrean@teknokrat.ac.id" aria-label="Email" class="transition hover:text-primary dark:hover:text-accent"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </footer>
+
+        <script type="module" src="/src/main.js"></script>
+    </body>
+</html>
