@@ -1,58 +1,306 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Latihan 4b — Database Migration, Eloquent Model & Seeder
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Data portofolio disimpan di **MySQL** menggunakan Laravel Migration, Eloquent Model, dan Seeder.
 
-## About Laravel
+> **Pemrograman Web 2 · BE-1b · Desain Database, Migration, Eloquent Model & Seeder**
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+|                 |                                                                                  |
+| --------------- | -------------------------------------------------------------------------------- |
+| **Nama**        | Muhammad Arkaan Andrean                                                          |
+| **NPM**         | 24312242                                                                         |
+| **Kelas**       | IF 24 CX                                                                         |
+| **Mata Kuliah** | Pemrograman Web 2                                                                |
+| **Branch**      | `Lat-4b_DatabaseModel`                                                           |
+| **Repository**  | https://github.com/muhammadarkaanandrean/Portofolio_V2                           |
+| **Link Branch** | https://github.com/muhammadarkaanandrean/Portofolio_V2/tree/Lat-4b_DatabaseModel |
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<!-- ![Tampilan Website](docs/preview.png) -->
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Daftar Isi
 
-## Learning Laravel
+- [Teknologi](#teknologi)
+- [Cara Menjalankan](#cara-menjalankan)
+- [Skema Database](#skema-database)
+- [Relasi Eloquent](#relasi-eloquent)
+- [Data Seeder](#data-seeder)
+- [Pengujian dengan Tinker](#pengujian-dengan-tinker)
+- [Screenshot](#screenshot)
+- [Struktur File Latihan 4b](#struktur-file-latihan-4b)
+- [Penulis](#penulis)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Teknologi
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| Bagian    | Teknologi           |
+| --------- | ------------------- |
+| Framework | Laravel             |
+| Database  | MySQL (via Laragon) |
+| ORM       | Eloquent            |
+| Bahasa    | PHP 8.3+            |
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## Cara Menjalankan
 
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+**Kebutuhan:** PHP 8.3+, Composer, dan MySQL (Laragon).
 
 ```bash
-composer require laravel/boost --dev
+# 1. Clone dan masuk ke folder
+git clone https://github.com/muhammadarkaanandrean/Portofolio_V2.git
+cd Portofolio_V2
+git switch Lat-4b_DatabaseModel
 
-php artisan boost:install
+# 2. Install dependensi
+composer install
+
+# 3. Siapkan environment
+copy .env.example .env
+php artisan key:generate
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Buat database kosong bernama `portofolio_web` (Laragon: **Start All**, lalu buka HeidiSQL dan buat database). Pastikan `.env` berisi:
 
-## Contributing
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=portofolio_web
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Lalu jalankan migrasi dan seeder:
 
-## Code of Conduct
+```bash
+php artisan migrate:fresh --seed
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Jalankan aplikasi:
 
-## Security Vulnerabilities
+```bash
+php artisan serve
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Buka `http://localhost:8000`.
 
-## License
+> File `.env` berisi kunci rahasia dan **tidak diunggah** ke GitHub.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Skema Database
+
+Terdapat **7 tabel**. `project_skill` adalah tabel pivot untuk relasi many-to-many antara `projects` dan `skills`.
+
+### ERD
+
+```mermaid
+erDiagram
+    PROJECTS ||--o{ PROJECT_SKILL : "dipakai di"
+    SKILLS   ||--o{ PROJECT_SKILL : "digunakan oleh"
+
+    PROFILES {
+        bigint id PK
+        string full_name
+        string headline
+        text bio
+        string email
+    }
+
+    SKILLS {
+        bigint id PK
+        string name
+        enum category
+        enum level
+        string icon
+    }
+
+    PROJECTS {
+        bigint id PK
+        string title
+        string slug UK
+        string summary
+        text description
+        boolean is_featured
+    }
+
+    PROJECT_SKILL {
+        bigint id PK
+        bigint project_id FK
+        bigint skill_id FK
+    }
+
+    EXPERIENCES {
+        bigint id PK
+        string title
+        string organization
+        enum type
+        date start_date
+        date end_date
+        boolean is_current
+    }
+
+    CERTIFICATES {
+        bigint id PK
+        string title
+        string issuer
+        date issued_date
+    }
+
+    MESSAGES {
+        bigint id PK
+        string sender_name
+        string sender_email
+        string subject
+        text body
+        boolean is_read
+    }
+```
+
+### Detail tabel
+
+**`profiles`** — biodata pemilik portofolio (1 baris)
+
+| Kolom                                         | Tipe             | Keterangan |
+| --------------------------------------------- | ---------------- | ---------- |
+| `id`                                          | bigint, PK       |            |
+| `full_name`, `headline`                       | string           |            |
+| `bio`                                         | text             |            |
+| `photo_url`, `cv_url`                         | string, nullable |            |
+| `email`                                       | string           |            |
+| `phone`, `location`                           | string, nullable |            |
+| `github_url`, `linkedin_url`, `instagram_url` | string, nullable |            |
+
+**`skills`**
+
+| Kolom      | Tipe             | Keterangan                                                      |
+| ---------- | ---------------- | --------------------------------------------------------------- |
+| `id`       | bigint, PK       |                                                                 |
+| `name`     | string           | mis. Laravel, Tailwind CSS                                      |
+| `category` | enum             | `Frontend`, `Backend`, `Database`, `Tools`                      |
+| `level`    | enum             | `Beginner`, `Intermediate`, `Advanced` (default `Intermediate`) |
+| `icon`     | string, nullable | slug ikon devicon                                               |
+
+**`projects`**
+
+| Kolom                                     | Tipe               | Keterangan                    |
+| ----------------------------------------- | ------------------ | ----------------------------- |
+| `id`                                      | bigint, PK         |                               |
+| `title`                                   | string             |                               |
+| `slug`                                    | string, **unique** | untuk URL ramah SEO           |
+| `summary`                                 | string             | deskripsi singkat untuk kartu |
+| `description`                             | text               | penjelasan lengkap            |
+| `thumbnail_url`, `demo_url`, `github_url` | string, nullable   |                               |
+| `is_featured`                             | boolean            | default `false`               |
+
+**`project_skill`** (pivot)
+
+| Kolom        | Tipe       | Keterangan                                           |
+| ------------ | ---------- | ---------------------------------------------------- |
+| `id`         | bigint, PK |                                                      |
+| `project_id` | foreignId  | → `projects.id`, `cascadeOnDelete`                   |
+| `skill_id`   | foreignId  | → `skills.id`, `cascadeOnDelete`                     |
+|              |            | pasangan `project_id` + `skill_id` bersifat **unik** |
+
+**`experiences`**
+
+| Kolom                   | Tipe           | Keterangan                                    |
+| ----------------------- | -------------- | --------------------------------------------- |
+| `id`                    | bigint, PK     |                                               |
+| `title`, `organization` | string         |                                               |
+| `type`                  | enum           | `Pendidikan`, `Organisasi`, `Magang`, `Kerja` |
+| `start_date`            | date           |                                               |
+| `end_date`              | date, nullable | null jika masih berjalan                      |
+| `is_current`            | boolean        | default `false`                               |
+| `description`           | text, nullable |                                               |
+
+**`certificates`**
+
+| Kolom             | Tipe             | Keterangan                   |
+| ----------------- | ---------------- | ---------------------------- |
+| `id`              | bigint, PK       |                              |
+| `title`, `issuer` | string           | nama sertifikat dan penerbit |
+| `issued_date`     | date             |                              |
+| `credential_url`  | string, nullable | tautan verifikasi            |
+| `description`     | text, nullable   |                              |
+
+**`messages`** — pesan dari form kontak
+
+| Kolom                                    | Tipe       | Keterangan      |
+| ---------------------------------------- | ---------- | --------------- |
+| `id`                                     | bigint, PK |                 |
+| `sender_name`, `sender_email`, `subject` | string     |                 |
+| `body`                                   | text       |                 |
+| `is_read`                                | boolean    | default `false` |
+
+## Relasi Eloquent
+
+| Model     | Relasi                                                          | Keterangan                       |
+| --------- | --------------------------------------------------------------- | -------------------------------- |
+| `Project` | `skills()` → `belongsToMany(Skill::class, 'project_skill')`     | 1 proyek memakai banyak skill    |
+| `Skill`   | `projects()` → `belongsToMany(Project::class, 'project_skill')` | 1 skill dipakai di banyak proyek |
+
+**Mass assignment:** `Message` memakai `$fillable` (whitelist) karena menerima input langsung dari pengunjung, sehingga kolom seperti `is_read` tidak bisa dimanipulasi. Model lain memakai `$guarded = ['id']`.
+
+## Data Seeder
+
+`php artisan migrate:fresh --seed` menjalankan `PortfolioSeeder` yang mengisi:
+
+| Tabel          | Jumlah | Keterangan                                             |
+| -------------- | ------ | ------------------------------------------------------ |
+| `profiles`     | 1      | biodata dan tautan sosial                              |
+| `skills`       | 12     | Frontend, Backend, Database, Tools                     |
+| `projects`     | 4      | masing-masing terhubung ke skill lewat `project_skill` |
+| `experiences`  | 3      | pendidikan dan organisasi                              |
+| `certificates` | 2      | sertifikat                                             |
+
+Relasi proyek dan skill memakai `sync()` supaya tidak terduplikasi bila seeder dijalankan ulang.
+
+## Pengujian dengan Tinker
+
+```bash
+php artisan tinker
+```
+
+```php
+$project = App\Models\Project::with('skills')->first();
+$project->title;
+$project->skills->pluck('name');
+```
+
+## Screenshot
+
+<!-- Simpan gambar di folder docs/ lalu hapus tanda komentar pada baris di bawah. -->
+
+**Tabel di database**
+
+![Tabel database](docs/db-tables.png)
+
+**Hasil Tinker**
+
+![Hasil Tinker](docs/tinker.png)
+
+## Struktur File Latihan 4b
+
+```
+├── app/
+│   └── Models/
+│       ├── Profile.php
+│       ├── Skill.php
+│       ├── Project.php
+│       ├── Experience.php
+│       ├── Certificate.php
+│       └── Message.php
+└── database/
+    ├── migrations/
+    │   ├── 2026_11_09_000001_create_profiles_table.php
+    │   ├── 2026_11_09_000002_create_skills_table.php
+    │   ├── 2026_11_09_000003_create_projects_table.php
+    │   ├── 2026_11_09_000004_create_project_skill_table.php
+    │   ├── 2026_11_09_000005_create_experiences_table.php
+    │   ├── 2026_11_09_000006_create_certificates_table.php
+    │   └── 2026_11_09_000007_create_messages_table.php
+    └── seeders/
+        ├── DatabaseSeeder.php
+        └── PortfolioSeeder.php
+```
+
+## Penulis
+
+**Muhammad Arkaan Andrean**
+Mahasiswa Informatika, Universitas Teknokrat Indonesia
+Bandar Lampung, Indonesia
